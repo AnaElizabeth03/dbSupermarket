@@ -105,7 +105,7 @@ VALUES
 	(9, 4, '2025-04-10', 0),
 	(10, 5, '2025-04-10', 0);
 
--- Insertar los detalles de las ventas (productos y cantidades)
+-- Insert sales details (products and quantities)
 
 INSERT INTO tsaleDetail (idSale, idProduct, quantity, unit_price)
 VALUES 
@@ -129,7 +129,7 @@ VALUES
     (9, 35, 3, 1.80),
     (9, 36, 2, 1.40),
     (10, 49, 1, 2.50),
-    (10, 52, 1, 2.30);
+    (10, 51, 1, 2.30);
 
 
 
