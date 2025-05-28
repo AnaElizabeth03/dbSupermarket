@@ -1,4 +1,4 @@
-
+--
 INSERT INTO tcategory (category) VALUES ('Beverages');
 INSERT INTO tcategory (category) VALUES ('Snacks');
 INSERT INTO tcategory (category) VALUES ('Dairy');
@@ -58,33 +58,33 @@ INSERT INTO tproduct (idCategory, nameProduct, price, stock) VALUES (6, 'Disinfe
 INSERT INTO tproduct (idCategory, nameProduct, price, stock) VALUES (6, 'Toilet Cleaner', 2.30, 200);
 INSERT INTO tproduct (idCategory, nameProduct, price, stock) VALUES (6, 'Bleach', 2.90, 140);
 
-INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('Juan Pérez', '912345678', 'juan.perez@email.com');
+INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('Juan PÃ©rez', '912345678', 'juan.perez@email.com');
 INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('Ana Torres', '987654321', 'ana.torres@email.com');
 INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('Carlos Soto', '956789012', 'carlos.soto@email.com');
-INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('Lucía Vargas', '934567890', 'lucia.vargas@email.com');
-INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('Martín Gómez', '923456789', 'martin.gomez@email.com');
-INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('Sofía Rojas', '978901234', 'sofia.rojas@email.com');
-INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('Pedro Díaz', '989012345', 'pedro.diaz@email.com');
+INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('LucÃ­a Vargas', '934567890', 'lucia.vargas@email.com');
+INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('MartÃ­n GÃ³mez', '923456789', 'martin.gomez@email.com');
+INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('SofÃ­a Rojas', '978901234', 'sofia.rojas@email.com');
+INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('Pedro DÃ­az', '989012345', 'pedro.diaz@email.com');
 INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('Camila Herrera', '932345678', 'camila.herrera@email.com');
-INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('Diego Núñez', '945678901', 'diego.nunez@email.com');
-INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('Valentina Muñoz', '956789123', 'valentina.munoz@email.com');
-INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('Andrés Silva', '967891234', 'andres.silva@email.com');
+INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('Diego NÃºÃ±ez', '945678901', 'diego.nunez@email.com');
+INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('Valentina MuÃ±oz', '956789123', 'valentina.munoz@email.com');
+INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('AndrÃ©s Silva', '967891234', 'andres.silva@email.com');
 INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('Fernanda Castro', '978912345', 'fernanda.castro@email.com');
-INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('Sebastián Reyes', '989123456', 'sebastian.reyes@email.com');
+INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('SebastiÃ¡n Reyes', '989123456', 'sebastian.reyes@email.com');
 INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('Josefa Molina', '912345987', 'josefa.molina@email.com');
-INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('Tomás Fuentes', '923456789', 'tomas.fuentes@email.com');
+INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('TomÃ¡s Fuentes', '923456789', 'tomas.fuentes@email.com');
 INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('Isidora Paredes', '934567891', 'isidora.paredes@email.com');
-INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('Agustín Carrasco', '945678912', 'agustin.carrasco@email.com');
+INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('AgustÃ­n Carrasco', '945678912', 'agustin.carrasco@email.com');
 INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('Renata Salinas', '956789234', 'renata.salinas@email.com');
-INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('Benjamín Araya', '967891245', 'benjamin.araya@email.com');
+INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('BenjamÃ­n Araya', '967891245', 'benjamin.araya@email.com');
 INSERT INTO tcustomer (nameCustomer, phone, email) VALUES ('Florencia Morales', '978912346', 'florencia.morales@email.com');
 
-INSERT INTO temployee (nameEmploye, role, email, phone) VALUES ('Pedro Ramírez', 'Manager', 'pedro.ramirez@email.com', '922345678');
-INSERT INTO temployee (nameEmploye, role, email, phone) VALUES ('Catalina León', 'Supervisor', 'catalina.leon@email.com', '955678901');
+INSERT INTO temployee (nameEmploye, role, email, phone) VALUES ('Pedro RamÃ­rez', 'Manager', 'pedro.ramirez@email.com', '922345678');
+INSERT INTO temployee (nameEmploye, role, email, phone) VALUES ('Catalina LeÃ³n', 'Supervisor', 'catalina.leon@email.com', '955678901');
 INSERT INTO temployee (nameEmploye, role, email, phone) VALUES ('Mateo Pino', 'Cashier', 'mateo.pino@email.com', '944567890');
 INSERT INTO temployee (nameEmploye, role, email, phone) VALUES ('Javiera Vega', 'Cashier', 'javiera.vega@email.com', '977890123');
-INSERT INTO temployee (nameEmploye, role, email, phone) VALUES ('Martina López', 'Cashier', 'martina.lopez@email.com', '999012345');
-INSERT INTO temployee (nameEmploye, role, email, phone) VALUES ('Valentina Núñez', 'Cashier', 'valentina.nunez@email.com', '955678923');
+INSERT INTO temployee (nameEmploye, role, email, phone) VALUES ('Martina LÃ³pez', 'Cashier', 'martina.lopez@email.com', '999012345');
+INSERT INTO temployee (nameEmploye, role, email, phone) VALUES ('Valentina NÃºÃ±ez', 'Cashier', 'valentina.nunez@email.com', '955678923');
 INSERT INTO temployee (nameEmploye, role, email, phone) VALUES ('Josefina Miranda', 'Cashier', 'josefina.miranda@email.com', '999012367');
 INSERT INTO temployee (nameEmploye, role, email, phone) VALUES ('Antonia Ruiz', 'Stocker', 'antonia.ruiz@email.com', '933456789');
 
@@ -130,10 +130,3 @@ VALUES
     (9, 36, 2, 1.40),
     (10, 49, 1, 2.50),
     (10, 51, 1, 2.30);
-
-
-
-
-
-
-
