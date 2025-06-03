@@ -5,61 +5,71 @@ GO
 USE dbsupermarket;
 GO
 
--- Table: Product categories
-CREATE TABLE tcategory (
-    idCategory INT PRIMARY KEY IDENTITY(1,1),
-    category VARCHAR(50) NOT NULL
+-- Employee
+CREATE TABLE Employee (
+    EmployeeID VARCHAR(5) NOT NULL,
+    FirstName VARCHAR(20) NOT NULL,
+    LastName VARCHAR(30) NOT NULL,
+    DNI VARCHAR(8) NOT NULL,
+    Phone VARCHAR(9) NOT NULL,
+    Address VARCHAR(50)
 );
 
--- Table: Products
-CREATE TABLE tproduct (
-    idProduct INT PRIMARY KEY IDENTITY(1,1),
-	idCategory INT,
-    nameProduct VARCHAR(100) NOT NULL,
-    price DECIMAL(10,2) NOT NULL,
-    stock INT NOT NULL,
-	
-    FOREIGN KEY (idCategory) REFERENCES tcategory (idCategory)
+-- User
+CREATE TABLE [User] (
+    UserID INT IDENTITY NOT NULL,
+    EmployeeID VARCHAR(5) NOT NULL,
+    Username VARCHAR(20) NOT NULL,
+    Password VARCHAR(20) NOT NULL,
+    AccessLevel VARCHAR(20) NOT NULL
 );
 
--- Table: Customers
-CREATE TABLE tcustomer (
-    idCustomer INT PRIMARY KEY IDENTITY(1,1),
-    nameCustomer NVARCHAR(100) NOT NULL,
-    phone VARCHAR(20),
-    email NVARCHAR(100)
+-- Client
+CREATE TABLE Client (
+    ClientID VARCHAR(10) NOT NULL,
+    FirstName VARCHAR(20) NOT NULL,
+    LastName VARCHAR(20) NOT NULL,
+    DNI VARCHAR(8) NOT NULL,
+    RUC VARCHAR(11) NOT NULL,
+    Age INT NOT NULL,
+    Gender CHAR(1) NOT NULL,
+    Phone CHAR(9) NOT NULL,
+    Address VARCHAR(50) NOT NULL
 );
 
--- Table: Employees
-CREATE TABLE temployee (
-    idEmployee INT PRIMARY KEY IDENTITY(1,1),
-    nameEmploye NVARCHAR(100) NOT NULL,
-    role NVARCHAR(50) NOT NULL,        
-    email NVARCHAR(100),             
-    phone VARCHAR(20)               
+-- Sale
+CREATE TABLE Sale (
+    SaleID VARCHAR(10) NOT NULL,
+    SaleDate DATE NOT NULL,
+    Invoice VARCHAR(7) NOT NULL,
+    UserID INT NOT NULL,
+    ClientID VARCHAR(10) NOT NULL
 );
 
--- Table: Sales
-CREATE TABLE tsale (
-    idSale INT PRIMARY KEY IDENTITY(1,1),
-	idCustomer INT NOT NULL,
-	idEmployee INT NOT NULL,
-    dateSale DATETIME DEFAULT GETDATE(),
-	total DECIMAL (10,2),
-
-	FOREIGN KEY (idCustomer) REFERENCES tcustomer(idCustomer),
-	FOREIGN KEY (idEmployee) REFERENCES temployee(idEmployee)
+-- SaleDetail
+CREATE TABLE SaleDetail (
+    SaleDetailID INT IDENTITY NOT NULL,
+    SaleID VARCHAR(10) NOT NULL,
+    ProductID VARCHAR(10) NOT NULL,
+    Quantity INT NOT NULL,
+    Price DECIMAL(8,2) NOT NULL,
+    Tax DECIMAL(8,2) NOT NULL,
+    Total DECIMAL(8,2) NOT NULL
 );
 
--- Table: Sale details 
-CREATE TABLE tsaleDetail (
-    idSaleDetail INT PRIMARY KEY IDENTITY(1,1),
-	idSale INT NOT NULL,
-	idProduct INT NOT NULL,
-    quantity INT NOT NULL,
-    unit_price DECIMAL(10,2) NOT NULL,
-    subtotal AS (quantity * unit_price) PERSISTED,
-	
-    FOREIGN KEY (idSale) REFERENCES tsale(idSale),
-    FOREIGN KEY (idProduct) REFERENCES tproduct (idProduct)
+-- Product
+CREATE TABLE Product (
+    ProductID VARCHAR(10) NOT NULL,
+    ProductName VARCHAR(30) NOT NULL,
+    EntryDate DATE NOT NULL,
+    ExpirationDate DATE NOT NULL,
+    Stock INT NOT NULL,
+    Price DECIMAL(9,2) NOT NULL,
+    CategoryID INT NOT NULL
+);
+
+-- Category
+CREATE TABLE Category (
+    CategoryID INT IDENTITY NOT NULL,
+    CategoryName VARCHAR(15) NOT NULL
 );
