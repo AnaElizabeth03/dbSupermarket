@@ -44,3 +44,58 @@ REFERENCES Product(ProductID);
 ALTER TABLE Product
 ADD CONSTRAINT FK_Product_Category FOREIGN KEY (CategoryID)
 REFERENCES Category(CategoryID);
+
+--CHECK
+-- Client: DNI must be exactly 8 digits
+ALTER TABLE Client 
+ADD CONSTRAINT CHK_Client_DNI 
+CHECK (DNI LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]');
+
+-- Client: Phone must be exactly 9 digits
+ALTER TABLE Client 
+ADD CONSTRAINT CHK_Client_Phone 
+CHECK (Phone LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]');
+
+ALTER TABLE Employee 
+ADD CONSTRAINT CHK_Employee_DNI 
+CHECK (DNI LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]');
+
+ALTER TABLE Employee 
+ADD CONSTRAINT CHK_Employee_Phone 
+CHECK (Phone LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]');
+
+-- Product: Price must be greater than 0
+ALTER TABLE Product 
+ADD CONSTRAINT CHK_Product_Price 
+CHECK (Price > 0);
+
+-- SaleDetail: Quantity must be greater than 0
+ALTER TABLE SaleDetail 
+ADD CONSTRAINT CHK_SaleDetail_Quantity 
+CHECK (Quantity > 0);
+
+-- SaleDetail: Price must be greater than 0
+ALTER TABLE SaleDetail 
+ADD CONSTRAINT CHK_SaleDetail_Price 
+CHECK (Price > 0);
+
+ALTER TABLE SaleDetail
+ADD CONSTRAINT CHK_SaleDetail_IGV_Calc
+CHECK (IGV = ROUND(Quantity * Price * 0.18, 2));
+
+ALTER TABLE SaleDetail
+ADD CONSTRAINT CHK_SaleDetail_Total_Calc
+CHECK (Total = ROUND(Quantity * Price + IGV, 2));
+
+--UNIQUE
+ALTER TABLE Client
+ADD CONSTRAINT UQ_Client_DNI UNIQUE (DNI);
+
+ALTER TABLE Product
+ADD CONSTRAINT UQ_Product_ProductName UNIQUE (ProductName);
+
+ALTER TABLE Employee
+ADD CONSTRAINT UQ_Employee_DNI UNIQUE (DNI);
+
+ALTER TABLE [User]
+ADD CONSTRAINT UQ_User_Username UNIQUE (Username);
